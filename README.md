@@ -1,6 +1,6 @@
 ### blog-app-2
 
-#####Integrate CKEditor to your Django Admin
+Integrate CKEditor to your Django Admin
 
 1. Install the Django-CKEditor
 ```
