@@ -16,7 +16,7 @@
                         <p><strong>{{ post.intro }}</strong></p>
                         <p>{{ post.body|safe }}</p>
                         <hr>
-                        <h2 class="subtit is-4">Comments</h2>
+                        <h2 class="subtitle is-4">Comments</h2>
                         <form method="post" class="mb-6">
                             {% csrf_token %}
                             {{ form.as_p }}
@@ -30,7 +30,7 @@
                         {% for comment in post.comments.all %}
                         <article class="media box">
                             <div class="media-content">
-                                <strong>{{ comment.name }}</strong><small>{{ comment.created_at | timesince }} ago</small><br>{{ comment.body }}
+                                <strong>{{ comment.name }}</strong> <small>{{ comment.created_at | timesince }} ago</small><br>{{ comment.body }}
                             </div>
                            
                         </article>
