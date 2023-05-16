@@ -2,7 +2,7 @@ from django.shortcuts import render
 from blog.models import Post
 
 def frontpage(request):
-    posts = Post.objects.all()
+    posts = Post.objects.filter(status=Post.ACTIVE)
     return render(request, 'core/frontpage.html', {'posts': posts})
 
 

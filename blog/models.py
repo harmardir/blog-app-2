@@ -16,6 +16,13 @@ class Category(models.Model):
 
 
 class Post(models.Model):
+    ACTIVE = 'active'
+    DRAFT = 'draft'
+
+    CHOICES_STATUS = (
+        (ACTIVE, 'Active'),
+        (DRAFT, 'Draft')
+    )
     category = models.ForeignKey(Category , related_name = 'posts', on_delete=models.CASCADE)
     title = models.CharField(max_length= 255)
     slug = models.SlugField()
@@ -23,6 +30,7 @@ class Post(models.Model):
     #body = models.TextField()
     body = RichTextUploadingField() # CKEditor Rich Text Field
     created_at = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=20, choices=CHOICES_STATUS, default=ACTIVE)
 
     def __str__(self):
         return self.title
