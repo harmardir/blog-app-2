@@ -31,6 +31,7 @@ class Post(models.Model):
     body = RichTextUploadingField() # CKEditor Rich Text Field
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=CHOICES_STATUS, default=ACTIVE)
+    image = models.ImageField(upload_to='uploads/',blank=True, null=True)
 
     def __str__(self):
         return self.title
